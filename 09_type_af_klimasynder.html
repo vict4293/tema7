@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+
+<body>
+
+	<script>
+		let timer = 300;
+		let afstand = 100;
+		let co2UdledtKgVedFlyrejse = timer * 109;
+		let resultat;
+
+		if (co2UdledtKgVedFlyrejse < 100) {
+			resultat = ("Tæt på Thunberg!")
+		} else if (co2UdledtKgVedFlyrejse < 200) {
+			resultat = ("Ja ja du behøver ikke melde dig ud af Å!")
+		} else if (co2UdledtKgVedFlyrejse < 600) {
+			resultat = ("Det er godt for turismen i Nordeuropa")
+		} else {
+			resultat = ("Nå ja vi kan jo altid overtage en anden planet")
+		}
+		console.log(resultat);
+
+	</script>
+</body>
+
+</html>
