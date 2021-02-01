@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+
+<body>
+	<p> Hvor gammel er du?</p>
+	<input type="text" id="dinAlder">
+	<p> Hvor gammel er din date?</p>
+	<input type="text" id="dateAlder">
+	<button>Klik og se om 7 års reglen overholdes!</button>
+
+	<script>
+		document.querySelector("button").addEventListener("click", buttonClicked);
+
+		function buttonClicked() {
+			let dinAlder = document.querySelector("#dinAlder").value;
+			let dateAlder = document.querySelector("#dateAlder").value;
+			let resultat;
+
+
+
+			if (dateAlder < 16 || dinAlder < 16) {
+				resultat = "Don't date";
+			} else if (dateAlder / 2 + 7 > dinAlder) {
+				resultat = "Din date er for gammel til dig";
+			} else if (dateAlder < dinAlder / 2 + 7) {
+				resultat = "Du for gammel til din date";
+			} else {
+				resultat = "Go on that date";
+			}
+			console.log(resultat);
+		}
+
+	</script>
+</body>
+
+</html>
