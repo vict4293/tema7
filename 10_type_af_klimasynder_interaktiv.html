@@ -24,13 +24,15 @@
 
 
 			if (isNaN(timer)) {
-				resultat = ("Det er ikke et tal - prøv igen");
+				resultat = "Det er ikke et tal - prøv igen";
 			} else if (timer <= 0) {
-				resultat = ("Arealet er lig med eller mindre end 0 - prøv igen");
+				resultat = "timetallet er lig med eller mindre end 0 - prøv igen";
 			} else {
-				resultat = (`Arealet er ${co2UdledtKgVedFlyrejse}`);
+				resultat = `Der er udledt ${co2UdledtKgVedFlyrejse} kg co2`;
 			}
+
 			console.log(resultat);
+		}
 
 	</script>
 </body>
