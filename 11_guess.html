@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+
+<body>
+	<p> Gæt et tal mellem 0 og 20</p>
+	<input type="text" id="guess">
+	<button>Klik og se om dit gæt!</button>
+
+
+	<script>
+		let nummer = Math.round(Math.random() * 20);
+
+		document.querySelector("button") - addEventListener("click", buttonClicked)
+
+		function buttonClicked() {
+			let guess = document.querySelector("#guess").value;
+			let resultat;
+
+
+			if (guess > nummer) {
+				resultat = "for højt - prøv igen";
+			} else if (guess < nummer) {
+				resultat = "for lavt - prøv igen";
+			} else {
+				resultat = "Rigtig gættet";
+			}
+			console.log(resultat);
+		}
+
+	</script>
+</body>
+
+</html>
