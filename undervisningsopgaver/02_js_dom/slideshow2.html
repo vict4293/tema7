@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+	<meta charset="UTF-8">
+	<title>Slideshow</title>
+</head>
+
+
+
+<body>
+	<h1>Tro på det...</h1>
+	<img src="billeder/img1.png" alt="billede 1">
+	<button>Næste billede</button>
+	<P>Billederne er lånt med tilladelse af Rasmus Bregnhøi</P>
+
+
+
+	<script>
+		let number = 0;
+		const forfra = document.querySelector("button");
+		const billede = document.querySelector("img");
+
+		let billeder = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
+
+		const knap = document.querySelector("button");
+		knap.addEventListener("click", skiftBillede);
+
+		function skiftBillede() {
+
+			if (number < 7) {
+				number++;
+				console.log(billeder[number]);
+				forfra.textContent = "Næste billede";
+			} else {
+				number = 0;
+				forfra.textContent = "Forfra";
+			}
+			billede.src = "billeder/" + billeder[number];
+		}
+
+	</script>
+</body>
+
+
+
+</html>
