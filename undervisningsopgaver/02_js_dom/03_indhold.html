@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		img {
+			width: 100%;
+		}
+
+		body {
+			margin-left: 5vw;
+			margin-right: 5vw;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		footer {
+			text-align: center;
+		}
+
+		@media only screen and (min-width: 600px) {
+			section {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				column-gap: 5vw;
+			}
+		}
+
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Titel</h1>
+	</header>
+	<main>
+		<h2>Undertitel</h2>
+		<section>
+			<article>
+				<img src="billeder/sek2_pic3.jpg" alt="biler">
+				<h3>Article 1</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</article>
+			<article>
+				<img src="billeder/sek2_pic3.jpg" alt="biler">
+				<h3>Article 2</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</article>
+		</section>
+		<footer>This is the footer</footer>
+	</main>
+	<script>
+		const titel = document.querySelector("h1");
+		titel.textContent = "Det her er min nye titel";
+		console.log(titel);
+
+		const undertitel = document.querySelector("h2");
+		console.log(undertitel);
+
+		let article1 = document.querySelector("article:first-child");
+		console.log(article1);
+
+		let pic1 = document.querySelector("article:first-child img");
+		pic1.src = "billeder/sek5_pic6.jpg";
+		pic1.alt = "dette er min nye alt tekst";
+		console.log(pic1);
+
+		let titel1 = document.querySelector("article:first-child h3");
+		titel1.textContent = "Det her er min nye undertitel";
+		console.log(titel1);
+
+		let text1 = document.querySelector("article:first-child p");
+		text1.textContent = "Det her er min nye brødtekst";
+		console.log(text1);
+
+		let article2 = document.querySelector("article:nth-child(2)");
+		console.log(article2);
+
+		let pic2 = document.querySelector("article:nth-child(2) img");
+		pic2.src = "billeder/sek5_pic6.jpg";
+		pic2.alt = "dette er min nye alt tekst";
+		console.log(pic2);
+
+		let titel2 = document.querySelector("article:nth-child(2) h3");
+		titel2.innerHTML = "<h3><em>Det her er min nye undertitel</em></h3>";
+		console.log(titel2);
+
+		let text2 = document.querySelector("article:nth-child(2) p");
+		text2.innerHTML = "<p><b>Det her er min nye brødtekst</b></p>";
+		console.log(text2);
+
+		const footer = document.querySelector("footer");
+		console.log(footer);
+
+	</script>
+</body>
+
+</html>
