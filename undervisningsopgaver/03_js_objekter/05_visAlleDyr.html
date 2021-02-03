@@ -13,8 +13,11 @@
 
 <body>
 	<header></header>
+
 	<main>
+		<section id="liste"></section>
 	</main>
+
 	<script>
 		document.addEventListener("DOMContentLoaded", start);
 
@@ -48,6 +51,11 @@
 				"levested": "flod"
 			}];
 			console.log(dyr);
+
+			const listevisning = document.querySelector("#liste");
+			dyr.forEach(dyr => {
+				listevisning.innerHTML += `<p>${dyr.navn}, ${dyr.type} fra ${dyr.levested}</p>`
+			})
 		}
 
 	</script>
