@@ -23,6 +23,10 @@
 			text-align: center;
 		}
 
+		.shadow {
+			box-shadow: 5px 10px #888888;
+		}
+
 		@media only screen and (min-width: 600px) {
 			section {
 				display: grid;
@@ -41,12 +45,12 @@
 	<main>
 		<h2>Undertitel</h2>
 		<section>
-			<article>
+			<article class="shadow">
 				<img src="billeder/sek2_pic3.jpg" alt="biler">
 				<h3>Article 1</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</article>
-			<article>
+			<article class="shadow">
 				<img src="billeder/sek2_pic3.jpg" alt="biler">
 				<h3>Article 2</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -87,6 +91,7 @@
 			let mainSection = document.querySelector("section");
 
 			let newArticle = document.createElement("article");
+			newArticle.classList.add("shadow");
 
 			let overskrift = document.createElement("h3");
 			let overskriftText = document.createTextNode("Min nye artikel");
@@ -123,15 +128,32 @@
 			const footer = document.querySelector("footer");
 			console.log(footer);
 
+
+			const artikel = document.querySelector("article:nth-child(1)");
+			artikel.classList.add("shadow");
+			artikel.addEventListener("mouseover", mouseOver);
+
+			function mouseOver() {
+				let artikelMus = document.querySelector("article:nth-child(1)");
+				artikelMus.classList.toggle("shadow");
+			}
+
+			const artikel2 = document.querySelector("article:nth-child(2)");
+			artikel2.classList.add("shadow");
+			artikel2.addEventListener("mouseout", mouseOut);
+
+			function mouseOut() {
+				let artikelMus2 = document.querySelector("article:nth-child(2)");
+				artikelMus2.classList.toggle("shadow");
+			}
+
 			pic1.addEventListener("click", skiftBillede);
-		}
 
-
-
-		function skiftBillede() {
-			let tal = Math.round(Math.random() * 10);
-			let pic1 = document.querySelector("article:first-child img");
-			pic1.src = "https://placeimg.com/400/300/arch?t=" + tal;
+			function skiftBillede() {
+				let tal = Math.round(Math.random() * 10);
+				let pic1 = document.querySelector("article:first-child img");
+				pic1.src = "https://placeimg.com/400/300/arch?t=" + tal;
+			}
 		}
 
 	</script>
