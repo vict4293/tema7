@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+
+
+	</style>
+</head>
+
+<body>
+	<header></header>
+
+	<main>
+		<section id="biler">
+			<template>
+				<h3></h3>
+				<p id="first">Model: </p>
+				<p id="second">Motor: </p>
+				<p id="third">km: </p>
+				<p>Udstyr: </p>
+				<ul id="liste"></ul>
+			</template>
+		</section>
+	</main>
+
+	<script>
+		const beholder = document.querySelector("#biler");
+		const omBilerne = document.querySelector("template");
+
+		const fil = "biler.json";
+
+
+		async function hentdata(fil) {
+			const resultat = await fetch(fil);
+			const json = await resultat.json();
+			vis(json);
+		}
+
+		function vis(json) {
+			console.log(json);
+			json.forEach(biler => {
+				const klon = omBilerne.cloneNode(true).content;
+				klon.querySelector("h3").textContent = biler.mærke;
+				klon.querySelector("#first").textContent += biler.model;
+				klon.querySelector("#second").textContent += biler.motor;
+				klon.querySelector("#third").textContent += biler.km;
+
+				biler.udstyr.forEach(udstyr => {
+					klon.querySelector("#liste").innerHTML += "<li>" + udstyr + "</li>"
+				})
+				beholder.appendChild(klon);
+			});
+		}
+
+		hentdata(fil);
+
+	</script>
+</body>
+
+</html>
